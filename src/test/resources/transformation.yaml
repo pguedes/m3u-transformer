@@ -1,0 +1,67 @@
+url: "http://nothing.com/here"
+transformation:
+  attributes:
+    - tag:
+        source: "tvg-name"
+        target: "quality"
+        values:
+          - "SD"
+          - "FHD"
+          - "HD"
+          - "4K"
+    - tag:
+        source: "tvg-name"
+        target: "country"
+        values:
+          - "ES"
+          - "PT"
+          - "TR"
+          - "US"
+          - "UK"
+          - "US"
+          - "RU"
+          - "CZ"
+          - "IT"
+          - "RS"
+          - "LU"
+          - "FR"
+          - "DE"
+          - "BE"
+          - "NL"
+          - "BR"
+          - "AU"
+          - "CA"
+          - "TH"
+          - "QA"
+          - "CH"
+          - "AR"
+          - "HU"
+          - "SI"
+          - "AL"
+          - "JP"
+          - "BG"
+          - "AT"
+          - "NO"
+          - "SE"
+          - "PL"
+    - replace:
+        attribute: "group-title"
+        original: "Movie:"
+        replacement: "Movies:"
+  filter:
+    - attribute:
+        country:
+          - "US"
+          - "UK"
+          - "PT"
+          - "NL"
+  select-by-attribute:
+    grouping:
+      attributes:
+        - "tvg-name"
+        - "country"
+    selection-attribute: "quality"
+    preference:
+      - "SD"
+      - "FHD"
+      - "HD"
